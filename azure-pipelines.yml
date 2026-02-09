@@ -2,12 +2,13 @@ trigger:
 - main
 
 pool:
-    vmImage: 'ubuntu-latest'
+  name: 'Default'  # Your self-hosted agent
+  #vmImage: 'ubuntu-latest' # have to Request Microsoft permission to enable your free tier.(2-5 business days
 
 variables:
   IMAGE_REGISTRY_CONNECTION: 'ACR Demo'
-  IMAGE_REGISTRY: 'ADODemo'
-  IMAGE_REPOSITORY: 'adodemo.azurecr.io'
+  IMAGE_REGISTRY_URL: 'adodemofl.azurecr.io' 
+  IMAGE_NAME: 'adodemo-app' 
   TAG: '$(Build.BuildId)'
 
 stages:
@@ -16,25 +17,44 @@ stages:
   - job: BuildPushImage
     steps:
     - task: Docker@2
+      displayName: "Build and Push to ACR"
       inputs:
         containerRegistry: '$(IMAGE_REGISTRY_CONNECTION)'
-        repository: '$(IMAGE_REPOSITORY)'
+        repository: '$(IMAGE_NAME)'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(TAG)'
 
 - stage: DeployDev
+  dependsOn: BuildApp # Ensures build finishes before deploy starts
   jobs: 
   - job: DeployDev
     steps:
     - task: AzureRmWebAppDeployment@4
+      displayName: "Deploy to Azure Web App"
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Azure'
+        azureSubscription: 'Azure subscription 1(233ee2f3-5862-4571-be30-cef6a9767ad7)'
         appType: 'webAppContainer'
         WebAppName: 'ADODemo-Dev'
-        DockerNamespace: '$(IMAGE_REGISTRY)' 
-        DockerRepository: '$(IMAGE_REPOSITORY)'
+        DockerNamespace: '$(IMAGE_REGISTRY_URL)' 
+        DockerRepository: '$(IMAGE_NAME)' # Fixed variable name
+        DockerImageTag: '$(TAG)'
+
+- stage: DeployTest
+  #condition: and(succeeded(), eq(variables['Build.Reason'], 'Schedule')) # Only deploy to test on scheduled runs
+  jobs: 
+  - job: DeployTest
+    steps:
+    - task: AzureRmWebAppDeployment@4
+      displayName: "Deploy to Azure Web App"
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure subscription 1(233ee2f3-5862-4571-be30-cef6a9767ad7)'
+        appType: 'webAppContainer'
+        WebAppName: 'ADODemo-Test'
+        DockerNamespace: '$(IMAGE_REGISTRY_URL)' 
+        DockerRepository: '$(IMAGE_NAME)' # Fixed variable name
         DockerImageTag: '$(TAG)'
 
 - stage: DeployProdAzure
@@ -46,18 +66,18 @@ stages:
     - task: ManualValidation@0
       timeoutInMinutes: 1440 # task times out in 1 day
       inputs:
-        notifyUsers: 'nana.janashia@nnsoftware.at'
+        notifyUsers: 'linares.fran@gmail.com'
         instructions: 'Please validate and approve deployment to prod'
   - job: DeployProd
     steps:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Azure'
+        azureSubscription: 'Azure subscription 1(233ee2f3-5862-4571-be30-cef6a9767ad7)'
         appType: 'webAppContainer'
         WebAppName: 'ADODemo-prod'
-        DockerNamespace: '$(IMAGE_REGISTRY)' 
-        DockerRepository: '$(IMAGE_REPOSITORY)'
+        DockerNamespace: '$(IMAGE_REGISTRY_URL)' 
+        DockerRepository: '$(IMAGE_NAME)' # Fixed variable name
         DockerImageTag: '$(TAG)'
 
 - stage: DeployProdAWS
@@ -69,7 +89,7 @@ stages:
     - task: ManualValidation@0
       timeoutInMinutes: 1440 # task times out in 1 day
       inputs:
-        notifyUsers: 'nana.janashia@nnsoftware.at'
+        notifyUsers: 'linares.fran@gmail.com'
         instructions: 'Please validate and approve deployment to prod'
   - job: DeployProd
     steps:
