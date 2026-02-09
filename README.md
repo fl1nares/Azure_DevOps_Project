@@ -1,7 +1,7 @@
 # Introduction 
 This project is based on the "Azure DevOps: Zero to Hero Course" Available [here.](https://aka.ms/AzureDevOps/ZeroToHero)
 
-## Prerequisites
+## Preparation
 
 <details><summary>Create a new Azure DevOps Organization (i.e. MyflOrg, name must be unique)</summary></details><p></p>
 <details><summary>Create a new Project (i.e ADODemo)</summary></details><p></p>
