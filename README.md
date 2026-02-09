@@ -24,12 +24,12 @@ This project is based on the "Azure DevOps: Zero to Hero Course" Available [here
 
 <details><summary>Create a Self-Hosted Agent.</summary>
 <p></p>
-<i>Microsoft stopped automatically granting free compute time (parallelism) to new Azure DevOps organizations to prevent crypto-mining abuse and you will get [error]No hosted parallelism has been purchased or granted. 
+Microsoft stopped automatically granting free compute time (parallelism) to new Azure DevOps organizations to prevent crypto-mining abuse and you will get [error]No hosted parallelism has been purchased or granted. 
 
 Solution
 
 - Request Microsoft to enable your free tier.(2-5 business days) or
-- Create a Self-Hosted Agent</i>
+- Create a Self-Hosted Agent
 
 </details> <p></p>
 
