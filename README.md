@@ -13,7 +13,9 @@ This project is on the "Azure DevOps: Zero to Hero Course" Available [here.](htt
 
 <p></p>
 
-![alt text](image.png)![alt text](image-1.png)
+
+<img src="images/0.png" width="70%" />
+<img src="images/1.png" width="70%" />
 
 <p></p>
 </details><p></p>
@@ -54,7 +56,9 @@ Solution
 </details> <p></p>
 <details><summary>Create container registry</summary>
 
-- ![alt text](image-2.png)!![alt text](image-4.png)
+
+<img src="images/2.png" width="70%" /> <p></p>
+<img src="images/4.png" width="70%" />
 
 </details> <p></p>
 
@@ -62,7 +66,8 @@ Solution
 
 - Go to Project Settings / Pipelines / Service Connections 
 - Add New service Connection - Type Docker registry 
-![alt text](image-5.png)
+
+<img src="images/5.png" width="70%" />
 
 </details><p></p>
 
@@ -71,7 +76,9 @@ Solution
 
 - Go to Azure - App Services
 - Create - Web App
-![alt text](image-6.png)![alt text](image-7.png)
+
+<img src="images/6.png" width="70%" />
+<img src="images/7.png" width="70%" />
 - Create another 2 web apps for test and prod named ADODemo-Test & ADODemo-prod
 
 </details><p></p>
@@ -79,7 +86,8 @@ Solution
 <details><summary>Upload ssh-key to Deploy to external environment (aws/on-prem)</summary>
 - Go to  Pipelines / Library / Secure files and upload the SSH-Key file needed by the script used in DeployProdAWS Stage.
 
-![alt text](image-8.png)
+
+<img src="images/8.png" width="70%" />
 
 </details><p></p>
 
