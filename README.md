@@ -91,7 +91,7 @@ Solution
 
 </details><p></p>
 
-CLONING THE REPO & RUN THE PIPELINE
+## Cloning the Repo & Run the Pipeline
 
 <details><summary>Go to Repo / Files and Clone this github<summary><p></p>
 </details><p></p>
