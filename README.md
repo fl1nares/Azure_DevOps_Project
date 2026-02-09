@@ -23,7 +23,7 @@ This project is on the "Azure DevOps: Zero to Hero Course" Available [here.](htt
 
 
 <details><summary>Create a Self-Hosted Agent.</summary>
-
+<p></p>
 Microsoft stopped automatically granting free compute time (parallelism) to new Azure DevOps organizations to prevent crypto-mining abuse and you will get [error]No hosted parallelism has been purchased or granted. 
 
 Solution
@@ -33,7 +33,7 @@ Solution
 
 </details> <p></p>
 
-<details><summary>Step 1: Create a Personal Access Token (PAT)</summary>
+<details><summary>Step 1: Create a Personal Access Token (PAT)</summary><p></p>
 
 - In Azure DevOps, click the User Settings icon (top right, next to your avatar) and select Personal access tokens.
 - Click + New Token.
@@ -42,7 +42,7 @@ Solution
 - Find Agent Pools and select Read & manage.
 - Click Create and copy the token immediately (you won't see it again).</details> <p></p>
 
-<details><summary>Step 2: Register the Agent</summary>
+<details><summary>Step 2: Register the Agent</summary><p></p>
 
 - Go to Project Settings (bottom left) > Agent pools.
 - Click on the Default pool.
@@ -54,7 +54,7 @@ Solution
 - When it asks for Agent Pool: Press Enter to use Default.
 - Run as service: Say Yes (if on Windows/Linux) so it starts automatically.
 </details> <p></p>
-<details><summary>Create container registry</summary>
+<details><summary>Create container registry</summary><p></p>
 
 
 <img src="images/2.png" width="70%" /> <p></p>
@@ -62,7 +62,7 @@ Solution
 
 </details> <p></p>
 
-<details><summary>Create Service Connection</summary>
+<details><summary>Create Service Connection</summary><p></p>
 
 - Go to Project Settings / Pipelines / Service Connections 
 - Add New service Connection - Type Docker registry 
@@ -71,20 +71,20 @@ Solution
 
 </details><p></p>
 
-<details><summary>Create App Service</summary>
+<details><summary>Create App Service</summary><p></p>
 
 
 - Go to Azure - App Services
 - Create - Web App
 
-<img src="images/6.png" width="70%" />
+<img src="images/6.png" width="70%" /><p></p>
 <img src="images/7.png" width="70%" />
 - Create another 2 web apps for test and prod named ADODemo-Test & ADODemo-prod
 
 </details><p></p>
 
-<details><summary>Upload ssh-key to Deploy to external environment (aws/on-prem)</summary>
-- Go to  Pipelines / Library / Secure files and upload the SSH-Key file needed by the script used in DeployProdAWS Stage.
+<details><summary>Upload ssh-key to Deploy to external environment (aws/on-prem)</summary><p></p>
+- Go to  Pipelines / Library / Secure files and upload the SSH-Key file needed by the script used in DeployProdAWS Stage.<p></p>
 
 
 <img src="images/8.png" width="70%" />
@@ -93,9 +93,9 @@ Solution
 
 CLONING THE REPO & RUN THE PIPELINE
 
-<details><summary>Go to Repo / Files and Clone this github<summary>
+<details><summary>Go to Repo / Files and Clone this github<summary><p></p>
 </details><p></p>
-<details><summary>Go to Pipelines and open the azure-pipelines.yml<summary>
+<details><summary>Go to Pipelines and open the azure-pipelines.yml<summary><p></p>
 </details><p></p>
-<details><summary>Run the Pipeline (manually approve the Deployprod stage)<summary>
+<details><summary>Run the Pipeline (manually approve the Deployprod stage)<summary><p></p>
 </details><p></p>
