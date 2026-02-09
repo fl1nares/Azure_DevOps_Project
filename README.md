@@ -4,10 +4,13 @@ This project is based on the "Azure DevOps: Zero to Hero Course" Available [here
 
 ## Preparation
 
-<details><summary>Create a new Azure DevOps Organization (i.e. MyflOrg, name must be unique)</summary></details><p></p>
-<details><summary>Create a new Project (i.e ADODemo)</summary></details><p></p>
+<details><summary>Create a new Azure DevOps Organization (i.e. MyflOrg, name must be unique)</summary></details>
+<p></p>
+<details><summary>Create a new Project (i.e ADODemo)</summary></details>
+<p></p>
 
-<details><summary>Go to Project Settings / General / Overwiew - Use Agile Process for the new Project</summary></details><p></p>
+<details><summary>Go to Project Settings / General / Overwiew - Use Agile Process for the new Project</summary></details>
+<p></p>
 
 
 <details><summary>Optional, Go to Boards / Project Config - Create Sprints & Areas</summary>
