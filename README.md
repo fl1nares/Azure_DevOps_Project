@@ -93,15 +93,15 @@ Solution
 
 ## Cloning the Repo & Run the Pipeline
 
-<details><summary>Go to Repo / Files and Clone this github<summary><p></p>
-</details>
-<details><summary>Go to Pipelines and open the azure-pipelines.yml<summary><p></p>
-</details>
-<details><summary>Run the Pipeline (manually approve the DeployProdAzure & DeployProdAWS stages)<summary><p></p>
+<details><summary>Go to Repo / Files and Clone this github<summary>
+</details><p></p>
+<details><summary>Go to Pipelines and open the azure-pipelines.yml<summary>
+</details><p></p>
+<details><summary>Run the Pipeline (manually approve the DeployProdAzure & DeployProdAWS stages)</summary><p></p>
 <img src="images/9.png" width="70%" /><p></p>
 <img src="images/10.png" width="70%" />
 </details><p></p>
-<details><summary>Go to Azure App Services and open the deployed app by clicking on Default domain url<summary><p></p>
+<details><summary>Go to Azure App Services and open the deployed app by clicking on Default domain url</summary><p></p>
 
 <img src="images/11.png" width="70%" /><p></p>
 <img src="images/12.png" width="70%" />
